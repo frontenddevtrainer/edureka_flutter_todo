@@ -1,4 +1,3 @@
-import 'package:edureka_todo/main.dart';
 import 'package:flutter/material.dart';
 
 class TodoList extends StatelessWidget {
