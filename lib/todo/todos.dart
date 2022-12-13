@@ -27,10 +27,21 @@ class _TodosState extends State<Todos> {
     });
   }
 
+  void delete(
+    int index,
+  ) {
+    setState(() {
+      _todos.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [NewTodo(_addNewTodo), TodoList(_todos, markAsCompleted)],
+      children: [
+        NewTodo(_addNewTodo),
+        TodoList(_todos, markAsCompleted, delete)
+      ],
     );
   }
 }

@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 class TodoList extends StatelessWidget {
   final List todos;
   final Function markAsCompleted;
+  Function delete;
 
-  const TodoList(this.todos, this.markAsCompleted, {super.key});
+  TodoList(this.todos, this.markAsCompleted, this.delete, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,14 @@ class TodoList extends StatelessWidget {
               Text(
                 todos[index].title,
                 style: const TextStyle(fontSize: 24),
-              )
+              ),
+              ElevatedButton(
+                  onPressed: todos[index].isCompleted
+                      ? () {
+                          delete(index);
+                        }
+                      : null,
+                  child: const Text("Delete"))
             ]),
           );
         }),
