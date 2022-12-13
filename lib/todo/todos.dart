@@ -21,10 +21,16 @@ class _TodosState extends State<Todos> {
     });
   }
 
+  void markAsCompleted(int index, bool isCompleted) {
+    setState(() {
+      _todos[index].isCompleted = isCompleted;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [NewTodo(_addNewTodo), TodoList(_todos)],
+      children: [NewTodo(_addNewTodo), TodoList(_todos, markAsCompleted)],
     );
   }
 }
