@@ -1,3 +1,4 @@
+import 'package:edureka_todo/todo/todos.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,26 +23,8 @@ class Todo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Edureka Todo")),
-        body: Column(
-          children: [
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(children: const [
-                  TextField(
-                    onChanged: null,
-                    decoration: InputDecoration(labelText: "Add todo"),
-                  ),
-                  ElevatedButton(onPressed: null, child: Text("Add"))
-                ]),
-              ),
-            ),
-            Column(
-              children: const [Text("das")],
-            )
-          ],
-        ));
+      appBar: AppBar(title: const Text("Edureka Todo")),
+      body: const Todos(),
+    );
   }
 }
