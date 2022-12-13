@@ -40,7 +40,8 @@ class _TodosState extends State<Todos> {
     return Column(
       children: [
         NewTodo(_addNewTodo),
-        TodoList(_todos, markAsCompleted, delete)
+        TodoList(
+            todos: _todos, markAsCompleted: markAsCompleted, delete: delete)
       ],
     );
   }

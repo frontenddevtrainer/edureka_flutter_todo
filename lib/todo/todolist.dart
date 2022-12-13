@@ -1,13 +1,15 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class TodoList extends StatelessWidget {
-  final List todos;
-  final Function markAsCompleted;
+  List todos;
+  Function markAsCompleted;
   Function delete;
 
-  TodoList(this.todos, this.markAsCompleted, this.delete, {super.key});
+  TodoList(
+      {super.key,
+      required this.delete,
+      required this.markAsCompleted,
+      required this.todos});
 
   @override
   Widget build(BuildContext context) {
